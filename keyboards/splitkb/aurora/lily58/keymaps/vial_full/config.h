@@ -3,6 +3,8 @@
 
 #pragma once
 
+#define ENCODER_RESOLUTION 2
+
 #define VIAL_KEYBOARD_UID {0xF6, 0x8C, 0xA5, 0xE0, 0xCE, 0x3B, 0xEB, 0x8F}
 
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 5 }
