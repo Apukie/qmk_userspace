@@ -10,6 +10,7 @@ If the keyboard has not been merged yet to the main branch of QMK you may need t
 
 1. Clone the Vial repo: `git clone --recursive https://github.com/vial-kb/vial-qmk`
 1. Run the `qmk setup -H vial-qmk` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.
+1. When asked if you want to keep the repository, select option 3.
 1. Fork this repository
 1. If you have already forked the `qmk/qmk_userspace` repository before you can add this repository manually following the [steps below](#adding-splitkb-fork-to-an-existing-fork).
 1. Clone your fork to your local machine
@@ -43,6 +44,7 @@ If the keyboard has not been merged yet to the main branch of QMK you may need t
 
 1. Clone the Vial repo: `git clone --recursive https://github.com/vial-kb/vial-qmk`
 1. Run the `qmk setup -H vial-qmk` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.
+1. When asked if you want to keep the repository, select option 3.
 1. Fork this repository
 1. Clone your fork to your local machine
 1. `cd` into this repository's clone directory
