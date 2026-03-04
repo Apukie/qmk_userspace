@@ -4,4 +4,9 @@
 #pragma once
 
 #undef ENCODER_RESOLUTION
+
+#if defined(KEYBOARD_splitkb_halcyon_ferris_rev1)
+#define ENCODER_RESOLUTION 4
+#else
 #define ENCODER_RESOLUTIONS { 2, 4 }
+#endif
