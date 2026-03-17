@@ -1,91 +1,128 @@
-# Splitkb QMK Userspace
+# Splitkb Halcyon Modules QMK Userspace
 
-This is the splitkb userspace repository which allows for an external set of QMK keymaps with halcyon modules to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the splitkb QMK or vial repository.
+This is the splitkb userspace repository. It allows for an external set of QMK keymaps with **Halcyon modules** to be defined and compiled without having to fork the main QMK or Vial repositories. 
 
-If you want to compile firmware without any modules you can also use the [main qmk_userspace repo](https://github.com/qmk/qmk_userspace).
+*If you want to compile standard firmware without any Halcyon modules, you can use the [main qmk_userspace repo](https://github.com/qmk/qmk_userspace). If you use the Halcyon to Promicro adapter board without any Halcyon modules you can use the converter without this repository.*
 
-If the keyboard has not been merged yet to the main branch of QMK you may need to edit the workflow, for that see [Extra info](#extra-info)
+## Supported Keyboards
 
-## Howto configure your build targets
+Currently supported keyboards:
 
-1. Clone the Vial repo: `git clone --recursive https://github.com/vial-kb/vial-qmk`
-1. Run the `qmk setup -H vial-qmk` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.
-1. When asked if you want to keep the repository, select option 3.
-1. Fork this repository
-1. If you have already forked the `qmk/qmk_userspace` repository before you can add this repository manually following the [steps below](#adding-splitkb-fork-to-an-existing-fork).
-1. Clone your fork to your local machine
-1. Enable userspace in QMK config using `qmk config user.overlay_dir="$(realpath qmk_userspace)"`
-1. Add a new keymap for your board by copy, pasting and renaming the `default_hlc` keymap within the `keyboards/splitkb/halcyon/$KB$/keymaps` folder.
-1. You may want to replace the `qmk.json` with the empty `qmk_empty.json` if you want to start from scratch as it will otherwise compile all default options.
-1. Add your keymap(s) to the build by running `qmk userspace-add -kb <your_keyboard> -km <your_keymap> -e <halcyon_module>=1 -e TARGET=<filename>`.
-    * This will automatically update your `qmk.json` file
-    * Corresponding `qmk userspace-remove -kb <your_keyboard> -km <your_keymap> -e <halcyon_module>=1 -e TARGET=<filename>`.
-    * Listing the build targets can be done with with `qmk userspace-list`
-    * If you want to use a module:
-        * For the filename make it so you can differentiate between the different firmwares for the modules. `kyria_rev4_default_encoder` for example.
-        * The following options are available for the halcyon modules:
-            * HLC_NONE, If you don't have a module installed but you do have a module on the other half.
-            * HLC_ENCODER, If you have an encoder module installed.
-            * HLC_TFT_DISPLAY, If you have a tft rgb display installed.
-            * HLC_CIRQUE_TRACKPAD, If you have a Cirque trackpad installed.
-1. Commit your changes
+- Halcyon Kyria (rev4)
+- Halcyon Elora (rev2)
+- Halcyon Corne (rev2)
+- Halcyon Ferris (rev1)
+- Halcyon Lily58 (rev2)
+- Aurora Sweep (rev1)
+- Aurora Lily58 (rev1)
+- Aurora Corne (rev1)
+- Kyria (rev3)
+
+If you want to add a keyboard which doesn't have support for Halcyon modules yet, please follow the [porting guide](PORTING.md). Please follow the [initial setup](#initial-setup--prerequisites) and [build target](#how-to-configure-your-build-targets) steps from this readme first.
 
 
-## Howto build with GitHub
+## Initial Setup & Prerequisites
 
-1. In the GitHub Actions tab, enable workflows
-1. Push your changes above to your forked GitHub repository
-1. Look at the GitHub Actions for a new actions run
-1. Wait for the actions run to complete
-1. Inspect the Releases tab on your repository for the latest firmware build
+Before configuring your keymaps or building firmware, you need to set up your build environment. 
+
+1. **Fork this repository** to your own GitHub account.
+2. **Clone the Vial repository** to your local machine:
+   ```bash
+   git clone --recursive https://github.com/vial-kb/vial-qmk
+   ```
+3. **Run the QMK setup procedure** pointing to the Vial repo (see [QMK Docs](https://docs.qmk.fm/#/newbs) for more details):
+   ```bash
+   qmk setup -H vial-qmk
+   ```
+   *(When asked if you want to keep the repository, select option **3**).*
+4. **Clone your forked userspace repository** to your local machine.
+5. **Enable userspace in QMK config**: 
+   Navigate into your cloned userspace directory and run:
+   ```bash
+   cd path/to/your/forked/qmk_userspace
+   qmk config user.overlay_dir="$(realpath .)"
+   ```
+   *(This ensures your userspace is available to QMK regardless of your current shell location).*
+
+> **Note:** If you have already forked the `qmk/qmk_userspace` repository previously, see the [Adding to an Existing Fork](#adding-halcyon-support-to-an-existing-userspace-fork) section below.
 
 
-## Howto build locally
+## How to Configure Your Build Targets
 
-1. Clone the Vial repo: `git clone --recursive https://github.com/vial-kb/vial-qmk`
-1. Run the `qmk setup -H vial-qmk` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.
-1. When asked if you want to keep the repository, select option 3.
-1. Fork this repository
-1. Clone your fork to your local machine
-1. `cd` into this repository's clone directory
-1. Set global userspace path: `qmk config user.overlay_dir="$(realpath .)"` -- you MUST be located in the cloned userspace location for this to work correctly
-    * This will be automatically detected if you've `cd`ed into your userspace repository, but the above makes your userspace available regardless of your shell location.
-1. Compile normally: `qmk compile -kb your_keyboard -km your_keymap -e <your_module>=1 -e TARGET=<filename>` or `make your_keyboard:your_keymap -e <your_module>=1 -e TARGET=<filename>`
+1. **Start fresh (Optional but recommended):** If you want to start completely from scratch without any default compile options, replace the `qmk.json` in the root folder with the provided `qmk_empty.json`.
+2. **Create your keymap:** Navigate to `keyboards/<keyboard_name>/keymaps` and copy/paste the `default_hlc` folder. Rename it to your desired keymap name.  
+    *(If you're unsure what the exact `keyboard_name` is, you can run `qmk list-keyboards | grep <keyboard>`)*
+3. **Add your keymap to the build targets** by running the following command:
+   ```bash
+   qmk userspace-add -kb <your_keyboard> -km <your_keymap> -e <halcyon_module>=1 -e TARGET=<filename>
+   ```
+   * *This command will automatically update your `qmk.json` file.*
+   * **`filename`**: Choose a descriptive filename so you can easily differentiate between module firmware (e.g., `halcyon_kyria_default_encoder`).
+   * **`halcyon_module`**: Replace this with one of the following environment variables depending on your hardware:
 
-Alternatively, if you configured your build targets above, you can use `qmk userspace-compile` to build all of your userspace targets at once.
+   | Module Variable | Description |
+   | :--- | :--- |
+   | `HLC_NONE` | You have a module installed on the *other* half, but not this half. |
+   | `HLC_ENCODER` | You have an encoder module installed. |
+   | `HLC_TFT_DISPLAY` | You have a TFT RGB display installed. |
+   | `HLC_CIRQUE_TRACKPAD` | You have a Cirque trackpad installed. |
+
+#### Useful Userspace Commands
+* **List configured targets:** `qmk userspace-list`
+* **Show generated compile commands:** `qmk userspace-compile -n`
+* **Remove a target:** `qmk userspace-remove -kb <your_keyboard> -km <your_keymap> -e <halcyon_module>=1 -e TARGET=<filename>`
 
 
-## Extra info
+## How to Build with GitHub Actions
 
-If you wish to point GitHub actions to a different repository, a different branch, or even a different keymap name, you can modify `.github/workflows/build_binaries.yml` to suit your needs.
+If you don't want to build locally, GitHub can compile the firmware for you automatically.
 
-To override the `build` job, you can change the following parameters to use a different QMK repository or branch, this can be useful if you want to use a the main QMK repository or a different vial branch. For example:
+1. Go to the **Actions** tab of your forked GitHub repository and click **"I understand my workflows, go ahead and enable them"**.
+2. Commit and push your local changes to your fork.
+3. Check the **Actions** tab to watch the build process run.
+4. Once completed, navigate to the **Releases** tab on your repository to download your latest compiled firmware `.hex` or `.uf2` files.
+
+
+## How to Build Locally
+
+Assuming you have completed the initial setup and configured your build targets, you can compile locally.
+
+**To build all userspace targets at once:**
+```bash
+qmk userspace-compile
 ```
+
+**To compile a specific target manually:**
+```bash
+qmk compile -kb <your_keyboard> -km <your_keymap> -e <your_module>=1 -e TARGET=<filename>
+```
+
+## Extra Info & Advanced Configuration
+
+### Modifying GitHub Actions
+If you wish to point GitHub Actions to a different QMK repository (such as the main QMK repo instead of Vial), a different branch, or a specific keymap, you can modify `.github/workflows/build_binaries.yml`.
+
+For example, to override the `build` job to use the QMK branch:
+```yaml
     with:
-      qmk_repo: vial-kb/vial-qmk
-      qmk_ref: vial
+      qmk_repo: qmk/qmk_firmware
+      qmk_ref: master
 ```
-Our halcyon module code should work fine with the main QMK repository but it may break if there are any breaking changes from QMK in the future. We will try our best to keep this repository up-to-date. You can track this in the `halcyon-qmk` branch.
+*Note: Our Halcyon module code should work fine with the main QMK repository, but it may break if QMK introduces upstream breaking changes. We track QMK updates in the `halcyon-qmk` branch.*
 
+### Adding Halcyon support to an Existing Userspace Fork
 
-## Adding splitkb fork to an existing fork
+If you already have a custom userspace fork of `qmk/qmk_userspace`, you can merge the Splitkb additions manually.
 
-### New branch
+#### Option A: Adding the Splitkb Upstream Branch
+1. Add this repo as a remote: `git remote add upstream https://github.com/splitkb/qmk_userspace.git`
+2. Fetch the upstream: `git fetch upstream`
+3. Create a new branch based on our halcyon branch: `git checkout -b halcyon upstream/halcyon`
+4. Make your changes and push: `git push -u origin halcyon`
 
-If you have already forked the qmk/qmk_userspace repository before you may need to manually add the `halcyon` branch.
+#### Option B: Copying files to your existing branch
+1. Clone or download the files from the Splitkb fork.
+2. Copy `users/halcyon_modules/rules.mk` and the entire `users/halcyon_modules/splitkb/` folder into your personal user folder.
+3. **Updating Keymaps:** If you modify an existing keymap (e.g., from the original Kyria, Elora, or Aurora), make sure to **add 10 new keys** in your keymap matrix. *(Check `keyboards/splitkb/halcyon/kyria/keymaps/default_hlc` for an example).*
 
-1. Add a new upstream `git remote add upstream https://github.com/splitkb/qmk_userspace.git`
-1. Fetch the upstream `git fetch upstream`
-1. Create a new branch based on the upstream `git checkout -b halcyon upstream/halcyon`
-1. Make any changes you want and push it to github `git push -u origin halcyon`
-
-### Existing branch
-
-You may also want to just add the files to your own branch if you have already setup a custom userspace before.
-
-1. Clone or download the files from our fork or add it as a new branch as above.
-1. Copy over the contents of `users/halcyon_modules/rules.mk` and the `users/halcyon_modules/splitkb/` folder to your personal user folder.
-
-If you want to modify an existing keymap (from the original Kyria, Elora or an Aurora board for example). Make sure to add 10 new keys in your keymap (Look at `keyboards/splitkb/halcyon/kyria/keymaps/default_hlc` for an example).
-
-Do note that we use some quantum functions in our userspace so there may be a conflict when compiling. If you use the `_user` functions you should be fine.
+> **⚠️ Warning:** We use some quantum functions in our userspace. If your existing userspace relies heavily on custom quantum functions, you may encounter compile conflicts. If you restrict yourself to `_user` functions, you should be fine.
