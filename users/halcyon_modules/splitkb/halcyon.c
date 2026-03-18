@@ -188,7 +188,7 @@ void matrix_slave_scan_kb(void) {
     matrix_slave_scan_user();
 }
 
-#ifndef VIAL_ENABLE
+#if (defined(HALCYON_BUTTONS_ENABLE) || !defined(VIAL_ENABLE))
 __attribute__((weak)) const uint16_t left_halcyon_buttons[10][5];
 __attribute__((weak)) const uint16_t right_halcyon_buttons[10][5];
 
@@ -221,4 +221,4 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
     return process_record_user(keycode, record);
 }
-#endif // VIAL_ENABLE
+#endif // HALCYON_BUTTONS_ENABLE || VIAL_ENABLE
