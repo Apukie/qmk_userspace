@@ -3,7 +3,5 @@
 
 #pragma once
 
-#ifdef HALCYON_ENABLE
 #undef MATRIX_COLS
 #define MATRIX_COLS 12 // 5 extra columns for buttons
-#endif // HALCYON_ENABLE

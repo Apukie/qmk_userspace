@@ -15,7 +15,5 @@
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 
-#ifdef HALCYON_ENABLE
 #undef MATRIX_COLS
 #define MATRIX_COLS 10 // 5 extra columns for buttons
-#endif // HALCYON_ENABLE
