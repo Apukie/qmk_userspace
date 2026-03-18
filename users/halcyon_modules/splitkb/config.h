@@ -122,3 +122,25 @@
     #define ENCODER_A_PINS_RIGHT { B2, F5, HLC_ENCODER_A }
     #define ENCODER_B_PINS_RIGHT { B6, D4, HLC_ENCODER_B }
 #endif
+
+// Helix
+#ifdef KEYBOARD_splitkb_aurora_helix_rev1
+    #define ENCODER_A_PINS { B4, HLC_ENCODER_A }
+    #define ENCODER_B_PINS { E6, HLC_ENCODER_B }
+
+    #undef ENCODER_A_PINS_RIGHT
+    #undef ENCODER_B_PINS_RIGHT
+    #define ENCODER_A_PINS_RIGHT { B2, HLC_ENCODER_A }
+    #define ENCODER_B_PINS_RIGHT { B3, HLC_ENCODER_B }
+#endif
+
+// Sofle v2
+#ifdef KEYBOARD_splitkb_aurora_sofle_v2_rev1
+    #define ENCODER_A_PINS { B2, HLC_ENCODER_A }
+    #define ENCODER_B_PINS { B6, HLC_ENCODER_B }
+
+    #undef ENCODER_A_PINS_RIGHT
+    #undef ENCODER_B_PINS_RIGHT
+    #define ENCODER_A_PINS_RIGHT { B2, HLC_ENCODER_A }
+    #define ENCODER_B_PINS_RIGHT { B6, HLC_ENCODER_B }
+#endif

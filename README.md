@@ -6,7 +6,7 @@ This is the splitkb userspace repository. It allows for an external set of QMK k
 
 ## Supported Keyboards
 
-Currently supported keyboards:
+Current supported keyboards:
 
 - Halcyon Kyria (rev4)
 - Halcyon Elora (rev2)
@@ -16,9 +16,13 @@ Currently supported keyboards:
 - Aurora Sweep (rev1)
 - Aurora Lily58 (rev1)
 - Aurora Corne (rev1)
+- Aurora Helix (rev1)
+- Aurora Sofle v2 (rev1)
 - Kyria (rev3)
 
-If you want to add a keyboard which doesn't have support for Halcyon modules yet, please follow the [porting guide](PORTING.md). Please follow the [initial setup](#initial-setup--prerequisites) and [build target](#how-to-configure-your-build-targets) steps from this readme first.
+If you want to add a keyboard which doesn't have support for Halcyon modules yet, please follow the [porting guide](docs/PORTING.md). Please follow the [initial setup](#initial-setup--prerequisites) and [build target](#how-to-configure-your-build-targets) steps from this readme first.
+
+This repository contains keymaps for both regular QMK (default_hlc) and Vial (vial_hlc). For the officially supported keyboards we will always provide these two keymaps. 
 
 
 ## Initial Setup & Prerequisites
@@ -50,7 +54,7 @@ Before configuring your keymaps or building firmware, you need to set up your bu
 ## How to Configure Your Build Targets
 
 1. **Start fresh (Optional but recommended):** If you want to start completely from scratch without any default compile options, replace the `qmk.json` in the root folder with the provided `qmk_empty.json`.
-2. **Create your keymap:** Navigate to `keyboards/<keyboard_name>/keymaps` and copy/paste the `default_hlc` folder. Rename it to your desired keymap name.  
+2. **Create your keymap:** Navigate to `keyboards/<keyboard_name>/keymaps` and copy/paste the `default_hlc` or `vial_hlc` folder. Rename it to your desired keymap name.  
     *(If you're unsure what the exact `keyboard_name` is, you can run `qmk list-keyboards | grep <keyboard>`)*
 3. **Add your keymap to the build targets** by running the following command:
    ```bash
@@ -64,6 +68,7 @@ Before configuring your keymaps or building firmware, you need to set up your bu
    | :--- | :--- |
    | `HLC_NONE` | You have a module installed on the *other* half, but not this half. |
    | `HLC_ENCODER` | You have an encoder module installed. |
+   | `HLC_ENCODER_REV2` | You have a second revision encoder module installed. |
    | `HLC_TFT_DISPLAY` | You have a TFT RGB display installed. |
    | `HLC_CIRQUE_TRACKPAD` | You have a Cirque trackpad installed. |
 
