@@ -210,12 +210,12 @@ Accessed by **holding `Spc` and `Ent` simultaneously**. All keys transparent exc
 | `TOGG` | Toggle RGB on/off     |
 | `NEXT` | Next RGB mode         |
 | `PREV` | Previous RGB mode     |
-| `HUEU` | Hue increase          |
-| `SATU` | Saturation increase   |
-| `VALU` | Brightness increase   |
-| `HUED` | Hue decrease          |
-| `SATD` | Saturation decrease   |
-| `VALD` | Brightness decrease   |
+| `HUEU` | Hue up                |
+| `SATU` | Saturation up         |
+| `VALU` | Brightness up         |
+| `HUED` | Hue down              |
+| `SATD` | Saturation down       |
+| `VALD` | Brightness down       |
 | `SPDU` | Animation speed up    |
 | `SPDD` | Animation speed down  |
 
