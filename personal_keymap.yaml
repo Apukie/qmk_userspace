@@ -1,0 +1,281 @@
+layout: {qmk_keyboard: splitkb/halcyon/corne/rev2, layout_name: LAYOUT_split_3x6_3}
+combos:
+  # Horizontal combos
+  - key_positions: [15, 16]   # D+F
+    key: CAPS
+    layers: [BASE]
+  - key_positions: [19, 20]   # J+K
+    key: ESC
+    layers: [BASE]
+  - key_positions: [20, 21]   # K+L
+    key: CapsWord
+    layers: [BASE]
+  - key_positions: [7, 8]     # U+I
+    key: "["
+    layers: [BASE]
+  - key_positions: [8, 9]     # I+O
+    key: "]"
+    layers: [BASE]
+  - key_positions: [31, 32]   # M+,
+    key: "-"
+    layers: [BASE]
+  - key_positions: [32, 33]   # ,+.
+    key: "="
+    layers: [BASE]
+  # Vertical combos
+  - key_positions: [7, 19]    # U+J
+    key: "("
+    layers: [BASE]
+  - key_positions: [8, 20]    # I+K
+    key: ")"
+    layers: [BASE]
+  - key_positions: [9, 21]    # O+L
+    key: "{"
+    layers: [BASE]
+  - key_positions: [10, 22]   # P+;
+    key: "}"
+    layers: [BASE]
+  # SYS layer combo
+  - key_positions: [38, 39]   # SPC+ENT
+    key: {h: SYS}
+    layers: [BASE]
+layers:
+  BASE:
+  - [TAB, Q, W, E, R, T, Y, U, I, O]
+  - - P
+    - {h: FUN}
+    - ESC
+    - {t: A, h: LGUI}
+    - {t: S, h: LALT}
+    - {t: D, h: LSFT}
+    - {t: F, h: LCTL}
+    - G
+    - H
+    - {t: J, h: RCTL}
+  - - {t: K, h: RSFT}
+    - {t: L, h: LALT}
+    - {t: ;, h: LGUI}
+    - ''''
+    - LCTL
+    - Z
+    - X
+    - C
+    - V
+    - B
+  - [N, M, ',', ., /, LALT, {t: BSPC, h: NAV}, {h: NUM}, SPC, ENT]
+  - [{h: FUN}, {t: OSft, h: SYM}]
+  NAV:
+  - - {t: ▽, type: trans}
+    - Alt+F4
+    - Sft+TAB
+    - Alt+TAB
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - PGUP
+    - {t: BSPC, h: ^BSPC}
+    - {t: ↑, h: ^Home}
+  - - {t: DEL, h: ^DEL}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: LGUI, h: sticky}
+    - {t: LALT, h: sticky}
+    - {t: LSFT, h: sticky}
+    - {t: LCTL, h: sticky}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - PGDN
+  - - {t: ←, h: Home}
+    - {t: ↓, h: ^End}
+    - {t: →, h: End}
+    - ENT
+    - {t: ▽, type: trans}
+    - UNDO
+    - AGIN
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: BSPC, type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  NUM:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '7'
+    - '8'
+    - '9'
+  - - {t: ▽, type: trans}
+    - BSPC
+    - {t: ▽, type: trans}
+    - LGUI
+    - LALT
+    - LSFT
+    - LCTL
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '4'
+  - - '5'
+    - '6'
+    - +
+    - '*'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - '0'
+    - '1'
+    - '2'
+    - '3'
+    - .
+    - /
+    - {t: ▽, type: trans}
+    - {t: NUM, type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  SYM:
+  - - {t: ▽, type: trans}
+    - '!'
+    - '@'
+    - '#'
+    - $
+    - '%'
+    - ^
+    - '&'
+    - '*'
+    - (
+  - - )
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '`'
+    - '~'
+    - '|'
+    - \
+    - _
+    - '-'
+    - '='
+  - - +
+    - '{'
+    - '}'
+    - '"'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '['
+    - ']'
+    - ':'
+    - ;
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: SYM, type: held}
+  FUN:
+  - - {t: ▽, type: trans}
+    - F12
+    - F7
+    - F8
+    - F9
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - MPRV
+    - VOLU
+    - MNXT
+  - - MUTE
+    - {t: FUN, type: held}
+    - {t: ▽, type: trans}
+    - {t: F11, h: LGUI}
+    - {t: F4, h: LALT}
+    - {t: F5, h: LSFT}
+    - {t: F6, h: LCTL}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: DPrev, h: LCTL}
+  - - {t: VolDn, h: LSft}
+    - {t: DNext, h: LAlt}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - F10
+    - F1
+    - F2
+    - F3
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - Alt+`
+    - Gui+Ctl+F
+    - Ctl+UP
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: FUN, type: held}
+    - {t: ▽, type: trans}
+  SYS:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - QK BOOT
+    - QK RBT
+    - EE CLR
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: SPC, type: held}
+    - {t: ENT, type: held}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
