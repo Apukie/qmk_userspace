@@ -283,9 +283,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ SYS – System (accessed by holding SPC + ENT simultaneously)                                     │
 // │                                                                                                 │
-// │  ───   ───  TOG  RMOD  MOD   ───  ║  ───   ───   ───   ───   ───   ───                         │
-// │  ───   SPI  HUI   SAI   VAI  ───  ║  ───   ───  BOOT  RESET EECLR  ───                         │
-// │  ───   SPD  HUD   SAD   VAD  ───  ║  ───   ───   ───   ───   ───   ───                         │
+// │  ───   ───  TOGG  PREV  NEXT  ───  ║  ───   ───   ───   ───   ───   ───                         │
+// │  ───  SPDU  HUEU  SATU  VALU ───  ║  ───   ───  BOOT  RESET EECLR  ───                         │
+// │  ───  SPDD  HUED  SATD  VALD ───  ║  ───   ───   ───   ───   ───   ───                         │
 // │                   [SYS combo]      ║             [SYS combo]                                   │
 // └─────────────────────────────────────────────────────────────────────────────────────────────────┘
   [SYS] = LAYOUT_corne_hlc(

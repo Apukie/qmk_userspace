@@ -242,9 +242,9 @@ layers:
   SYS:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - RGB TOG
-    - RGB RMOD
-    - RGB MOD
+    - RM TOGG
+    - RM PREV
+    - RM NEXT
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -253,10 +253,10 @@ layers:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - RGB SPI
-    - RGB HUI
-    - RGB SAI
-    - RGB VAI
+    - RM SPDU
+    - RM HUEU
+    - RM SATU
+    - RM VALU
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -265,10 +265,10 @@ layers:
     - EE CLR
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - RGB SPD
-    - RGB HUD
-    - RGB SAD
-    - RGB VAD
+    - RM SPDD
+    - RM HUED
+    - RM SATD
+    - RM VALD
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}

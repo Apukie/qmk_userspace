@@ -191,11 +191,11 @@ Top row: Prev/Vol↑/Next/Mute. Bottom row: `PinApp` (Alt+\`), `PinWin`, `DskMgr
 
 ```
 ┌──────┬──────┬──────┬──────┬──────┬──────┐     ┌──────┬──────┬──────┬──────┬──────┬──────┐
-│      │      │ TOG  │rMOD  │ MOD  │      │     │      │      │      │      │      │      │
+│      │      │ TOGG │ PREV │ NEXT │      │     │      │      │      │      │      │      │
 ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
-│      │ SPI  │ HUI  │ SAI  │ VAI  │      │     │      │      │ BOOT │ RBT  │EECLR │      │
+│      │ SPDU │ HUEU │ SATU │ VALU │      │     │      │      │ BOOT │ RBT  │EECLR │      │
 ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
-│      │ SPD  │ HUD  │ SAD  │ VAD  │      │     │      │      │      │      │      │      │
+│      │ SPDD │ HUED │ SATD │ VALD │      │     │      │      │      │      │      │      │
 └──────┴──────┴──────┴─┬────┴─┬────┴─┬────┘     └─┬────┴─┬────┴─┬────┴──────┴──────┴──────┘
                        │      │      │[SPC+ENT]   │[SPC+ENT]    │
                        └──────┴──────┘            └──────┴──────┘
@@ -207,17 +207,17 @@ Accessed by **holding `Spc` and `Ent` simultaneously**. All keys transparent exc
 
 | Key   | Function              |
 |-------|-----------------------|
-| `TOG` | Toggle RGB on/off     |
-| `MOD` | Next RGB mode         |
-| `rMOD`| Previous RGB mode     |
-| `HUI` | Hue increase          |
-| `SAI` | Saturation increase   |
-| `VAI` | Brightness increase   |
-| `HUD` | Hue decrease          |
-| `SAD` | Saturation decrease   |
-| `VAD` | Brightness decrease   |
-| `SPI` | Animation speed up    |
-| `SPD` | Animation speed down  |
+| `TOGG` | Toggle RGB on/off     |
+| `NEXT` | Next RGB mode         |
+| `PREV` | Previous RGB mode     |
+| `HUEU` | Hue increase          |
+| `SATU` | Saturation increase   |
+| `VALU` | Brightness increase   |
+| `HUED` | Hue decrease          |
+| `SATD` | Saturation decrease   |
+| `VALD` | Brightness decrease   |
+| `SPDU` | Animation speed up    |
+| `SPDD` | Animation speed down  |
 
 Toggle/mode on top row (E/R/T positions). Speed on ring finger (S/X), H/S/V increase on home row (D/F/G), decrease directly below (C/V/B).
 
