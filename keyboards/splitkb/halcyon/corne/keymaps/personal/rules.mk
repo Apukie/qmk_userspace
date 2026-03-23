@@ -16,6 +16,9 @@ CAPS_WORD_ENABLE = yes
 # Key Overrides  (Shift+,→;  Shift+.→:)
 KEY_OVERRIDE_ENABLE = yes
 
+# RGB Matrix  (per-key RGB, 27 LEDs per side)
+RGB_MATRIX_ENABLE = yes
+
 # ─────────────────────────────────────────
 # Optional: uncomment to enable mouse keys
 # on a future MOUSE layer

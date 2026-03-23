@@ -241,11 +241,11 @@ layers:
     - {t: ▽, type: trans}
   SYS:
   - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - RGB TOG
-    - RGB MOD
     - RGB RMOD
-    - RGB SPI
-    - RGB SPD
+    - RGB MOD
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -253,7 +253,7 @@ layers:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - RGB SPI
     - RGB HUI
     - RGB SAI
     - RGB VAI
@@ -265,7 +265,7 @@ layers:
     - EE CLR
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - RGB SPD
     - RGB HUD
     - RGB SAD
     - RGB VAD

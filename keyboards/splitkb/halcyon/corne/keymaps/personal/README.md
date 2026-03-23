@@ -191,11 +191,11 @@ Top row: Prev/Vol↑/Next/Mute. Bottom row: `PinApp` (Alt+\`), `PinWin`, `DskMgr
 
 ```
 ┌──────┬──────┬──────┬──────┬──────┬──────┐     ┌──────┬──────┬──────┬──────┬──────┬──────┐
-│      │ TOG  │ MOD  │rMOD  │ SPI  │ SPD  │     │      │      │      │      │      │      │
+│      │      │ TOG  │rMOD  │ MOD  │      │     │      │      │      │      │      │      │
 ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
-│      │      │ HUI  │ SAI  │ VAI  │      │     │      │      │ BOOT │ RBT  │EECLR │      │
+│      │ SPI  │ HUI  │ SAI  │ VAI  │      │     │      │      │ BOOT │ RBT  │EECLR │      │
 ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
-│      │      │ HUD  │ SAD  │ VAD  │      │     │      │      │      │      │      │      │
+│      │ SPD  │ HUD  │ SAD  │ VAD  │      │     │      │      │      │      │      │      │
 └──────┴──────┴──────┴─┬────┴─┬────┴─┬────┘     └─┬────┴─┬────┴─┬────┴──────┴──────┴──────┘
                        │      │      │[SPC+ENT]   │[SPC+ENT]    │
                        └──────┴──────┘            └──────┴──────┘
@@ -210,16 +210,16 @@ Accessed by **holding `Spc` and `Ent` simultaneously**. All keys transparent exc
 | `TOG` | Toggle RGB on/off     |
 | `MOD` | Next RGB mode         |
 | `rMOD`| Previous RGB mode     |
-| `SPI` | Animation speed up    |
-| `SPD` | Animation speed down  |
 | `HUI` | Hue increase          |
 | `SAI` | Saturation increase   |
 | `VAI` | Brightness increase   |
 | `HUD` | Hue decrease          |
 | `SAD` | Saturation decrease   |
 | `VAD` | Brightness decrease   |
+| `SPI` | Animation speed up    |
+| `SPD` | Animation speed down  |
 
-H/S/V increase on home row (S/D/F positions), decrease directly below on bottom row (X/C/V positions).
+Toggle/mode on top row (E/R/T positions). Speed on ring finger (S/X), H/S/V increase on home row (D/F/G), decrease directly below (C/V/B).
 
 **Right hand — system:**
 
