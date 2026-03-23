@@ -10,11 +10,17 @@ the home position.
 ## Building
 
 ```bash
-# From your userspace root
-qmk compile -kb splitkb/halcyon/corne/rev2 -km apukie
+# Standard build (no modules)
+qmk compile -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_NONE=1
+
+# With TFT display module
+qmk compile -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_TFT_DISPLAY=1
+
+# With Cirque trackpad module
+qmk compile -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_CIRQUE_TRACKPAD=1
 
 # Or flash directly (put keyboard in bootloader mode first)
-qmk flash -kb splitkb/halcyon/corne/rev2 -km apukie
+qmk flash -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_NONE=1
 ```
 
 Or push to GitHub — Actions will build and publish a release automatically.

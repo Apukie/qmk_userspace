@@ -173,6 +173,14 @@
             "splitkb/halcyon/corne/rev2",
             "personal",
             {
+                "HLC_CIRQUE_TRACKPAD": "1",
+                "TARGET": "splitkb_halcyon_corne_rev2_personal_cirque_trackpad"
+            }
+        ],
+        [
+            "splitkb/halcyon/corne/rev2",
+            "personal",
+            {
                 "HLC_NONE": "1",
                 "TARGET": "splitkb_halcyon_corne_rev2_personal"
             }
