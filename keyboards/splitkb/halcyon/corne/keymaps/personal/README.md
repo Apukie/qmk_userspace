@@ -35,7 +35,7 @@ NAV   →  arrows / paging / OSM mods / window mgmt    (hold Bspc → NAV)
 NUM   →  right-hand numpad + left GASC mods           (hold MO(NUM) thumb)
 SYM   →  symbols                                      (hold OSft/SYM outer right thumb)
 FUN   →  F-keys (numpad) + desktop + media            (hold MO(FUN) thumb)
-SYS   →  system (BOOT / reset / EEPROM clear)         (hold Spc + Ent together)
+SYS   →  RGB controls (left) + system (right)          (hold Spc + Ent together)
 ```
 
 ---
@@ -191,11 +191,11 @@ Top row: Prev/Vol↑/Next/Mute. Bottom row: `PinApp` (Alt+\`), `PinWin`, `DskMgr
 
 ```
 ┌──────┬──────┬──────┬──────┬──────┬──────┐     ┌──────┬──────┬──────┬──────┬──────┬──────┐
-│      │      │      │      │      │      │     │      │      │      │      │      │      │
+│      │ TOG  │ MOD  │rMOD  │ SPI  │ SPD  │     │      │      │      │      │      │      │
 ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
-│      │      │      │      │      │      │     │      │      │ BOOT │ RBT  │EECLR │      │
+│      │      │ HUI  │ SAI  │ VAI  │      │     │      │      │ BOOT │ RBT  │EECLR │      │
 ├──────┼──────┼──────┼──────┼──────┼──────┤     ├──────┼──────┼──────┼──────┼──────┼──────┤
-│      │      │      │      │      │      │     │      │      │      │      │      │      │
+│      │      │ HUD  │ SAD  │ VAD  │      │     │      │      │      │      │      │      │
 └──────┴──────┴──────┴─┬────┴─┬────┴─┬────┘     └─┬────┴─┬────┴─┬────┴──────┴──────┴──────┘
                        │      │      │[SPC+ENT]   │[SPC+ENT]    │
                        └──────┴──────┘            └──────┴──────┘
@@ -203,11 +203,31 @@ Top row: Prev/Vol↑/Next/Mute. Bottom row: `PinApp` (Alt+\`), `PinWin`, `DskMgr
 
 Accessed by **holding `Spc` and `Ent` simultaneously**. All keys transparent except:
 
+**Left hand — RGB controls:**
+
+| Key   | Function              |
+|-------|-----------------------|
+| `TOG` | Toggle RGB on/off     |
+| `MOD` | Next RGB mode         |
+| `rMOD`| Previous RGB mode     |
+| `SPI` | Animation speed up    |
+| `SPD` | Animation speed down  |
+| `HUI` | Hue increase          |
+| `SAI` | Saturation increase   |
+| `VAI` | Brightness increase   |
+| `HUD` | Hue decrease          |
+| `SAD` | Saturation decrease   |
+| `VAD` | Brightness decrease   |
+
+H/S/V increase on home row (S/D/F positions), decrease directly below on bottom row (X/C/V positions).
+
+**Right hand — system:**
+
 - `BOOT` — enter bootloader mode for flashing
 - `RBT` — soft reset (reboot firmware)
 - `EECLR` — clear EEPROM (reset all persistent settings)
 
-The keys are placed on the right hand middle cluster to make accidental activation very unlikely.
+System keys are placed on the right hand middle cluster to make accidental activation very unlikely.
 
 ---
 

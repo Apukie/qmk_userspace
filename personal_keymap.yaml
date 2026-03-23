@@ -1,3 +1,6 @@
+draw_config:
+  dark_mode: auto
+  append_colon_to_layer_header: false
 layout: {qmk_keyboard: splitkb/halcyon/corne/rev2, layout_name: LAYOUT_split_3x6_3}
 combos:
   # Horizontal combos
@@ -91,7 +94,7 @@ layers:
     - ENT
     - {t: ▽, type: trans}
     - UNDO
-    - AGIN
+    - REDO
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -201,10 +204,10 @@ layers:
     - F9
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - MPRV
-    - VOLU
-    - MNXT
-  - - MUTE
+    - $$mdi:skip-backward$$
+    - $$mdi:volume-high$$
+    - $$mdi:skip-forward$$
+  - - $$mdi:volume-off$$
     - {t: FUN, type: held}
     - {t: ▽, type: trans}
     - {t: F11, h: LGUI}
@@ -214,7 +217,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: DPrev, h: LCTL}
-  - - {t: VolDn, h: LSft}
+  - - {t: $$mdi:volume-medium$$, h: LSft}
     - {t: DNext, h: LAlt}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -238,11 +241,11 @@ layers:
     - {t: ▽, type: trans}
   SYS:
   - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - RGB TOG
+    - RGB MOD
+    - RGB RMOD
+    - RGB SPI
+    - RGB SPD
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -251,9 +254,9 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - RGB HUI
+    - RGB SAI
+    - RGB VAI
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -263,9 +266,9 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - RGB HUD
+    - RGB SAD
+    - RGB VAD
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
