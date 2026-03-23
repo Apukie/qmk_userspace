@@ -160,6 +160,22 @@
                 "HLC_NONE": "1",
                 "TARGET": "splitkb_halcyon_ferris_rev1_default_hlc"
             }
+        ],
+        [
+            "splitkb/halcyon/corne/rev2",
+            "personal",
+            {
+                "HLC_TFT_DISPLAY": "1",
+                "TARGET": "splitkb_halcyon_corne_rev2_personal_display"
+            }
+        ],
+        [
+            "splitkb/halcyon/corne/rev2",
+            "personal",
+            {
+                "HLC_NONE": "1",
+                "TARGET": "splitkb_halcyon_corne_rev2_personal"
+            }
         ]
     ]
 }

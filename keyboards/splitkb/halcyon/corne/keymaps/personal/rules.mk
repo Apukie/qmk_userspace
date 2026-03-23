@@ -3,6 +3,10 @@
 #  splitkb Halcyon Corne rev2
 # ============================================================
 
+# Halcyon module support (TFT display, Cirque trackpad, encoder)
+# Compile with: -e HLC_TFT_DISPLAY=1 or -e HLC_CIRQUE_TRACKPAD=1
+USER_NAME := halcyon_modules
+
 # Combos (bracket combos, ESC, CapsWord, SPC+ENT→SYS, etc.)
 COMBO_ENABLE = yes
 
