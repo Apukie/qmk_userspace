@@ -15,6 +15,7 @@
 // ============================================================
 
 #include QMK_KEYBOARD_H
+#include "hlc_tft_display/hlc_tft_display.h"
 
 // ─────────────────────────────────────────
 // Layer index
@@ -27,6 +28,21 @@ enum layers {
     FUN,
     SYS,
 };
+
+// ─────────────────────────────────────────
+// Layer names for display
+// ─────────────────────────────────────────
+const char *get_layer_name(uint8_t layer) {
+    switch (layer) {
+        case BASE: return "BASE";
+        case NAV:  return "NAV";
+        case NUM:  return "NUM";
+        case SYM:  return "SYM";
+        case FUN:  return "FUN";
+        case SYS:  return "SYS";
+        default:   return "?";
+    }
+}
 
 // ─────────────────────────────────────────
 // Desktop management macros

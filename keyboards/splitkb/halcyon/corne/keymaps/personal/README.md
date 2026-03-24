@@ -25,6 +25,24 @@ qmk flash -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_NONE=1
 
 Or push to GitHub — Actions will build and publish a release automatically.
 
+### Mixed modules (TFT display on left, Cirque trackpad on right)
+
+Both modules share the same CS pin (GP13) on the module port, so each half needs its own firmware:
+
+```bash
+# Left half — TFT display
+qmk compile -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_TFT_DISPLAY=1 -e TARGET=personal_left
+
+# Right half — Cirque trackpad
+qmk compile -kb splitkb/halcyon/corne/rev2 -km personal -e HLC_CIRQUE_TRACKPAD=1 -e TARGET=personal_right
+```
+
+Flash each half with its respective `.uf2`. They communicate over TRRS as normal.
+
+### TFT display
+
+The display shows the active layer name (BASE / NAV / NUM / SYM / FUN / SYS) in the layer's accent colour, along with Caps Lock, Num Lock, and Scroll Lock indicators.
+
 ---
 
 ## Layer overview

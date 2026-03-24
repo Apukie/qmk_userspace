@@ -27,9 +27,14 @@ static const char *caps =        "Caps";
 static const char *num =         "Num";
 static const char *scroll =      "Scroll";
 
+__attribute__((weak)) const char *get_layer_name(uint8_t layer) {
+    static const char *defaults[] = {"0","1","2","3","4","5","6","7","8","9"};
+    if (layer < 10) return defaults[layer];
+    return "?";
+}
+
 static painter_font_handle_t Retron27;
 static painter_font_handle_t Retron27_underline;
-static painter_image_handle_t layer_number;
 
 static uint8_t lcd_surface_fb[SURFACE_REQUIRED_BUFFER_BYTE_SIZE(135, 240, 16)];
 
@@ -200,44 +205,21 @@ void update_display(void) {
     }
 
     if(last_layer_state != layer_state || first_run_layer == false) {
-        switch (get_highest_layer(layer_state|default_layer_state)) {
-        case 0:
-            layer_number = qp_load_image_mem(gfx_0);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_0, HSV_BLACK);
-            break;
-        case 1:
-            layer_number = qp_load_image_mem(gfx_1);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_1, HSV_BLACK);
-            break;
-        case 2:
-            layer_number = qp_load_image_mem(gfx_2);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_2, HSV_BLACK);
-            break;
-        case 3:
-            layer_number = qp_load_image_mem(gfx_3);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_3, HSV_BLACK);
-            break;
-        case 4:
-            layer_number = qp_load_image_mem(gfx_4);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_4, HSV_BLACK);
-            break;
-        case 5:
-            layer_number = qp_load_image_mem(gfx_5);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_5, HSV_BLACK);
-            break;
-        case 6:
-            layer_number = qp_load_image_mem(gfx_6);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_6, HSV_BLACK);
-            break;
-        case 7:
-            layer_number = qp_load_image_mem(gfx_7);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_7, HSV_BLACK);
-            break;
-        default:
-            layer_number = qp_load_image_mem(gfx_undef);
-            qp_drawimage_recolor(lcd_surface, 5, 5, layer_number, HSV_LAYER_UNDEF, HSV_BLACK);
+        uint8_t layer = get_highest_layer(layer_state|default_layer_state);
+        uint8_t h, s, v;
+        switch (layer) {
+        case 0: h = 0;   s = 0;   v = 160; break;
+        case 1: h = 23;  s = 89;  v = 255; break;
+        case 2: h = 43;  s = 71;  v = 255; break;
+        case 3: h = 0;   s = 82;  v = 255; break;
+        case 4: h = 77;  s = 64;  v = 255; break;
+        case 5: h = 176; s = 77;  v = 255; break;
+        case 6: h = 131; s = 99;  v = 255; break;
+        case 7: h = 154; s = 94;  v = 255; break;
+        default: h = 0;  s = 255; v = 255; break;
         }
-        qp_close_image(layer_number);
+        qp_rect(lcd_surface, 5, 5, 135, 5 + Retron27->line_height, HSV_BLACK, true);
+        qp_drawtext_recolor(lcd_surface, 5, 5, Retron27_underline, get_layer_name(layer), h, s, v, HSV_BLACK);
         last_layer_state = layer_state;
         first_run_layer = true;
     }
