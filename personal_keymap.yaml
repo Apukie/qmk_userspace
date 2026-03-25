@@ -69,16 +69,16 @@ layers:
   - [{h: FUN}, {t: OSft, h: SYM}]
   NAV:
   - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - Alt+F4
     - Sft+TAB
     - Alt+TAB
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - PGUP
     - {t: BSPC, h: ^BSPC}
     - {t: ↑, h: ^Home}
-  - - {t: DEL, h: ^DEL}
+    - {t: DEL, h: ^DEL}
+  - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: LGUI, h: sticky}
@@ -86,17 +86,17 @@ layers:
     - {t: LSFT, h: sticky}
     - {t: LCTL, h: sticky}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - PGDN
-  - - {t: ←, h: Home}
-    - {t: ↓, h: ^End}
+    - {t: ←, h: Home}
+  - - {t: ↓, h: ^End}
     - {t: →, h: End}
     - ENT
     - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - UNDO
     - REDO
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
