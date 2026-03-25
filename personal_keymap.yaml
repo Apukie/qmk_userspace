@@ -251,7 +251,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - QK BOOT
     - {t: ▽, type: trans}
     - RM SPDU
     - RM HUEU
@@ -260,10 +260,10 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-  - - QK BOOT
-    - QK RBT
-    - EE CLR
+  - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - QK RBT
     - {t: ▽, type: trans}
     - RM SPDD
     - RM HUED
@@ -275,7 +275,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - EE CLR
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: SPC, type: held}
